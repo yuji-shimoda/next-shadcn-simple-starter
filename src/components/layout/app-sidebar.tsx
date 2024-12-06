@@ -32,7 +32,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import * as React from "react";
 import { Icons } from "../icons";
-import ThemeToggle from "@/components/layout/ThemeToggle/theme-toggle";
+import ThemeToggle from "@/components/theme-toggle";
 
 export const company = {
   name: "Acme Inc",

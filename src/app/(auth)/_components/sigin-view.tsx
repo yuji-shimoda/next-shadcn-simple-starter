@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import Link from "next/link";
 import UserAuthForm from "./user-auth-form";
 import { buttonVariants } from "@/components/ui/button";

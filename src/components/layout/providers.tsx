@@ -1,8 +1,8 @@
 "use client";
 
-import React from "react";
+import type React from "react";
 import { ThemeProvider } from "next-themes";
-import { SessionProvider, SessionProviderProps } from "next-auth/react";
+import { SessionProvider, type SessionProviderProps } from "next-auth/react";
 
 export default function Providers({
   session,

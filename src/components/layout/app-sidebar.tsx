@@ -1,6 +1,10 @@
 "use client";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -71,7 +75,10 @@ export default function AppSidebar() {
                 >
                   <SidebarMenuItem>
                     <CollapsibleTrigger asChild>
-                      <SidebarMenuButton tooltip={item.title} isActive={pathname === item.url}>
+                      <SidebarMenuButton
+                        tooltip={item.title}
+                        isActive={pathname === item.url}
+                      >
                         {item.icon && <Icon />}
                         <span>{item.title}</span>
                         <Icons.chevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
@@ -81,7 +88,10 @@ export default function AppSidebar() {
                       <SidebarMenuSub>
                         {item.items?.map((subItem) => (
                           <SidebarMenuSubItem key={subItem.title}>
-                            <SidebarMenuSubButton asChild isActive={pathname === subItem.url}>
+                            <SidebarMenuSubButton
+                              asChild
+                              isActive={pathname === subItem.url}
+                            >
                               <Link href={subItem.url}>
                                 <span>{subItem.title}</span>
                               </Link>
@@ -94,7 +104,11 @@ export default function AppSidebar() {
                 </Collapsible>
               ) : (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild tooltip={item.title} isActive={pathname === item.url}>
+                  <SidebarMenuButton
+                    asChild
+                    tooltip={item.title}
+                    isActive={pathname === item.url}
+                  >
                     <Link href={item.url}>
                       <Icon />
                       <span>{item.title}</span>
@@ -116,14 +130,21 @@ export default function AppSidebar() {
                   className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
                 >
                   <Avatar className="h-8 w-8 rounded-lg">
-                    <AvatarImage src={session?.user?.image || ""} alt={session?.user?.name || ""} />
+                    <AvatarImage
+                      src={session?.user?.image || ""}
+                      alt={session?.user?.name || ""}
+                    />
                     <AvatarFallback className="rounded-lg">
                       {session?.user?.name?.slice(0, 2)?.toUpperCase() || "CN"}
                     </AvatarFallback>
                   </Avatar>
                   <div className="grid flex-1 text-left text-sm leading-tight">
-                    <span className="truncate font-semibold">{session?.user?.name || ""}</span>
-                    <span className="truncate text-xs">{session?.user?.email || ""}</span>
+                    <span className="truncate font-semibold">
+                      {session?.user?.name || ""}
+                    </span>
+                    <span className="truncate text-xs">
+                      {session?.user?.email || ""}
+                    </span>
                   </div>
                   <Icons.chevronsUpDown className="ml-auto size-4" />
                 </SidebarMenuButton>
@@ -142,12 +163,18 @@ export default function AppSidebar() {
                         alt={session?.user?.name || ""}
                       />
                       <AvatarFallback className="rounded-lg">
-                        {session?.user?.name?.slice(0, 2)?.toUpperCase() || "CN"}
+                        {session?.user?.name?.slice(0, 2)?.toUpperCase() ||
+                          "CN"}
                       </AvatarFallback>
                     </Avatar>
                     <div className="grid flex-1 text-left text-sm leading-tight">
-                      <span className="truncate font-semibold">{session?.user?.name || ""}</span>
-                      <span className="truncate text-xs"> {session?.user?.email || ""}</span>
+                      <span className="truncate font-semibold">
+                        {session?.user?.name || ""}
+                      </span>
+                      <span className="truncate text-xs">
+                        {" "}
+                        {session?.user?.email || ""}
+                      </span>
                     </div>
                   </div>
                 </DropdownMenuLabel>
@@ -158,7 +185,9 @@ export default function AppSidebar() {
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
-                  <DropdownMenuItem onClick={() => signOut({ callbackUrl: "/" })}>
+                  <DropdownMenuItem
+                    onClick={() => signOut({ callbackUrl: "/" })}
+                  >
                     <Icons.logout />
                     Sign out
                   </DropdownMenuItem>

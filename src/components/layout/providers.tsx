@@ -13,7 +13,12 @@ export default function Providers({
 }) {
   return (
     <>
-      <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
         <SessionProvider session={session}>{children}</SessionProvider>
       </ThemeProvider>
     </>

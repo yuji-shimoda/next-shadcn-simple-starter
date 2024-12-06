@@ -9,7 +9,9 @@ export const metadata: Metadata = {
   description: "Basic dashboard with Next.js and Shadcn",
 };
 
-export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
+export default async function DashboardLayout({
+  children,
+}: { children: React.ReactNode }) {
   const cookieStore = await cookies();
   const defaultOpen = cookieStore.get("sidebar:state")?.value === "true";
   return (

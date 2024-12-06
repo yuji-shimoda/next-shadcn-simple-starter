@@ -12,6 +12,7 @@
   "formatter": {
     "enabled": true,
     "formatWithErrors": false,
+    "ignore": ["src/lib/*", "src/components/ui/*", "src/hooks/*", "app/auth*"],
     "indentStyle": "space",
     "indentWidth": 2,
     "lineEnding": "lf",

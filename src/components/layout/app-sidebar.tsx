@@ -26,7 +26,6 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar";
 import { navItems } from "@/constants/data";
-import { ChevronRight, ChevronsUpDown, GalleryVerticalEnd } from "lucide-react";
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -36,7 +35,7 @@ import ThemeToggle from "@/components/theme-toggle";
 
 export const company = {
   name: "Acme Inc",
-  logo: GalleryVerticalEnd,
+  logo: <Icons.logo />,
   plan: "Enterprise",
 };
 
@@ -49,7 +48,7 @@ export default function AppSidebar() {
       <SidebarHeader>
         <div className="flex gap-2 py-2 text-sidebar-accent-foreground ">
           <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-            <company.logo className="size-4" />
+            <Icons.logo className="size-4" />
           </div>
           <div className="grid flex-1 text-left text-sm leading-tight">
             <span className="truncate font-semibold">{company.name}</span>
@@ -75,7 +74,7 @@ export default function AppSidebar() {
                       <SidebarMenuButton tooltip={item.title} isActive={pathname === item.url}>
                         {item.icon && <Icon />}
                         <span>{item.title}</span>
-                        <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
+                        <Icons.chevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
                       </SidebarMenuButton>
                     </CollapsibleTrigger>
                     <CollapsibleContent>
@@ -126,7 +125,7 @@ export default function AppSidebar() {
                     <span className="truncate font-semibold">{session?.user?.name || ""}</span>
                     <span className="truncate text-xs">{session?.user?.email || ""}</span>
                   </div>
-                  <ChevronsUpDown className="ml-auto size-4" />
+                  <Icons.chevronsUpDown className="ml-auto size-4" />
                 </SidebarMenuButton>
               </DropdownMenuTrigger>
               <DropdownMenuContent

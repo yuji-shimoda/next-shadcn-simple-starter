@@ -18,7 +18,7 @@ import {
   LucideIcon,
   LucideProps,
   LucideShoppingBag,
-  Moon,
+  MoonStar,
   MoreVertical,
   Plus,
   Settings,
@@ -29,6 +29,7 @@ import {
   UserPen,
   UserX2Icon,
   X,
+  LogOut,
 } from "lucide-react";
 
 export type Icon = LucideIcon;
@@ -37,6 +38,7 @@ export const Icons = {
   dashboard: LayoutDashboardIcon,
   logo: Frame,
   login: LogIn,
+  logout: LogOut,
   close: X,
   product: LucideShoppingBag,
   spinner: Loader2,
@@ -59,7 +61,7 @@ export const Icons = {
   arrowRight: ArrowRight,
   help: HelpCircle,
   sun: SunMedium,
-  moon: Moon,
+  moon: MoonStar,
   laptop: Laptop,
   gitHub: ({ ...props }: LucideProps) => (
     <svg

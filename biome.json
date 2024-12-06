@@ -36,7 +36,7 @@
       "src/lib/*",
       "src/components/ui/*",
       "src/hooks/*",
-      "app/auth/*"
+      "app/auth*"
     ]
   },
   "javascript": {
